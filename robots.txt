@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://duchuyn04.github.io/Mooly-Milk/sitemap.xml
