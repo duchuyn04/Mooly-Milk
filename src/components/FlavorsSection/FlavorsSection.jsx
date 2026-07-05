@@ -189,7 +189,7 @@ export function FlavorsSection({ prefersReducedMotion, isTouch, isNarrow }) {
               <h2>Chọn vị theo tâm trạng</h2>
             </div>
             <p>
-              Kệ sản phẩm mới đặt một vị nổi bật cạnh danh sách vị rõ ràng để người xem chọn nhanh hơn trên mọi kích thước màn hình.
+              Kệ sản phẩm MooLy Milk đặt một vị nổi bật cạnh danh sách vị rõ ràng để người xem chọn nhanh hơn trên mọi kích thước màn hình.
             </p>
           </div>
 
@@ -198,7 +198,7 @@ export function FlavorsSection({ prefersReducedMotion, isTouch, isNarrow }) {
               <div className={styles.productCopy}>
                 <span className={styles.eyebrow}>Vị đang nổi bật</span>
                 <h3>{activeFlavor.displayName} mát lạnh</h3>
-                <p>{activeFlavor.desc}</p>
+                <p>MooLy Milk vị {activeFlavor.displayName.toLowerCase()} có {activeFlavor.desc.toLowerCase()}</p>
                 <Button href="#footer" variant="primary">
                   Chọn vị này
                 </Button>

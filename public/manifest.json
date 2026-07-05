@@ -1,14 +1,15 @@
 {
-  "name": "MooLy - Sữa tươi ngon mỗi ngày",
-  "short_name": "MooLy",
-  "description": "Sữa tươi thơm ngon, béo nhẹ, ngọt vừa với nhiều hương vị dễ chọn.",
-  "start_url": "/",
+  "name": "MooLy Milk - Sữa tươi ngon mỗi ngày",
+  "short_name": "MooLy Milk",
+  "description": "Sữa tươi MooLy Milk thơm ngon, béo nhẹ, ngọt vừa với nhiều hương vị dễ chọn.",
+  "start_url": "/Mooly-Milk/",
+  "scope": "/Mooly-Milk/",
   "display": "standalone",
   "background_color": "#fff6ec",
   "theme_color": "#fff6ec",
   "icons": [
     {
-      "src": "./favicon.svg",
+      "src": "/Mooly-Milk/favicon.svg",
       "sizes": "any",
       "type": "image/svg+xml"
     }
