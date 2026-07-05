@@ -1,0 +1,62 @@
+.nav {
+  position: absolute;
+  inset: 0 0 auto;
+  z-index: 40;
+  height: 5.5rem;
+  pointer-events: none;
+}
+
+.nav::after {
+  content: '';
+  position: absolute;
+  top: 2.8rem;
+  left: 50%;
+  width: 2.5rem;
+  height: 0.75rem;
+  transform: translateX(-50%);
+  border-top: 2px solid rgba(63, 39, 28, 0.82);
+  border-bottom: 2px solid rgba(63, 39, 28, 0.82);
+}
+
+.logo {
+  position: absolute;
+  top: 1.7rem;
+  left: 2.5rem;
+  display: inline-flex;
+  align-items: center;
+  font-family: 'Nunito', sans-serif;
+  font-size: 2rem;
+  font-style: normal;
+  font-weight: 800;
+  line-height: 1;
+  letter-spacing: 0;
+  text-transform: none;
+  color: var(--brown);
+  pointer-events: auto;
+}
+
+.logoIcon {
+  display: none;
+}
+
+.navLinks,
+.navCta {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .nav {
+    height: 4.75rem;
+  }
+
+  .nav::after {
+    top: 2.35rem;
+    width: 2rem;
+  }
+
+  .logo {
+    top: 1.45rem;
+    left: 1.15rem;
+    font-size: 1.55rem;
+  }
+}

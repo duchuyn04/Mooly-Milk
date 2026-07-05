@@ -1,0 +1,213 @@
+:root {
+  --cream: #F9E8D7;
+  --cream-dark: #F3DEC8;
+  --brown: #3F271C;
+  --brown-soft: #674939;
+  --caramel: #D9A24A;
+  --milk: #FFF8F0;
+  --white: #FFFFFF;
+  --text: #3F271C;
+  --text-muted: #674939;
+  --ease-fluid: cubic-bezier(0.32, 0.72, 0, 1);
+}
+
+* { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  font-family: 'Be Vietnam Pro', sans-serif;
+  background: var(--cream);
+  color: var(--text);
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+body::after {
+  content: '';
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 9999;
+  opacity: 0.04;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+}
+
+body.intro-locked {
+  overflow: hidden;
+}
+
+body.is-touch .flavors {
+  height: auto;
+  min-height: auto;
+}
+
+body.is-touch .flavors-track-wrap {
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  padding-bottom: 1rem;
+}
+
+body.is-touch .flavors-track {
+  padding-left: calc((100vw - min(82vw, 320px)) / 2);
+  padding-right: calc((100vw - min(82vw, 320px)) / 2);
+}
+
+body.is-touch .flavor-card {
+  scroll-snap-align: center;
+}
+
+h1, h2, h3, .logo {
+  font-family: 'Nunito', sans-serif;
+  text-transform: uppercase;
+  margin: 0;
+  line-height: 1.15;
+  letter-spacing: 0.01em;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+.can-svg {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Animation utility classes */
+.reveal-text .char {
+  display: inline-block;
+  will-change: transform, opacity;
+  overflow: visible;
+  padding-top: 0.18em;
+  padding-bottom: 0.04em;
+}
+
+.is-visible {
+  opacity: 1;
+}
+
+.grabbing {
+  cursor: grabbing !important;
+}
+
+.is-blurred {
+  filter: blur(3px) drop-shadow(0 14px 28px rgba(92, 61, 46, 0.12));
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  clip-path: inset(50%);
+  white-space: nowrap;
+  border: 0;
+}
+
+.skip-link {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 9999;
+  transform: translateY(-120%);
+  padding: 0.75rem 1.25rem;
+  background: var(--brown, #3f251b);
+  color: var(--milk, #fff8f0);
+  font-weight: 700;
+  text-decoration: none;
+  border-radius: 0 0 0.5rem 0;
+  transition: transform 0.2s ease;
+}
+
+.skip-link:focus {
+  transform: translateY(0);
+}
+
+/* Keyframes */
+@keyframes waveMove {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+@keyframes milkParticleFloat {
+  0% {
+    transform: translateY(-12vh) translateX(0) scale(0.7);
+    opacity: 0;
+  }
+  8% {
+    opacity: 0.55;
+  }
+  25% {
+    transform: translateY(25vh) translateX(18px) scale(1);
+  }
+  50% {
+    transform: translateY(50vh) translateX(-12px) scale(1.1);
+  }
+  75% {
+    transform: translateY(75vh) translateX(22px) scale(1);
+    opacity: 0.4;
+  }
+  92% {
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(112vh) translateX(-8px) scale(0.8);
+    opacity: 0;
+  }
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+
+  .wave-rect {
+    animation: none;
+  }
+
+  .reveal-text .char {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+
+  .milk-particle {
+    animation: none;
+    opacity: 0;
+  }
+}
+
+/* Reduced motion: reveal content without relying on GSAP animations */
+@media (prefers-reduced-motion: reduce) {
+  .reveal-text .char,
+  .hero-title .char,
+  .section-title .char,
+  .section-title .highlight,
+  .hero-sub,
+  .hero-value,
+  .hero-badge,
+  .hero-cta,
+  .hero-featured-can,
+  .hero-flying-can,
+  .benefit-card,
+  .nutrition-item {
+    opacity: 1 !important;
+    transform: none !important;
+    clip-path: none !important;
+  }
+
+  .section-title .highlight {
+    clip-path: inset(0 0% 0 0) !important;
+  }
+}

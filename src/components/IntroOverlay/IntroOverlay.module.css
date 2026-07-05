@@ -1,0 +1,68 @@
+.introOverlay {
+  position: fixed;
+  inset: 0;
+  z-index: 200;
+  background: var(--brown);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: var(--milk);
+  overflow: hidden;
+}
+
+.introOverlay.isDone {
+  pointer-events: none;
+}
+
+.introCans {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.introCan {
+  position: absolute;
+  width: clamp(60px, 8vw, 110px);
+  opacity: 0;
+  will-change: transform, opacity;
+}
+
+.introLogo {
+  font-family: 'Nunito', sans-serif;
+  font-size: clamp(4rem, 12vw, 10rem);
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  line-height: 1.1;
+  position: relative;
+  z-index: 2;
+}
+
+.introLogo .char {
+  display: inline-block;
+  will-change: transform, opacity;
+}
+
+.introProgress {
+  position: absolute;
+  bottom: 10vh;
+  left: 50%;
+  transform: translateX(-50%);
+  width: min(320px, 70%);
+  text-align: center;
+}
+
+.introProgressBar {
+  height: 2px;
+  background: var(--caramel);
+  width: 0%;
+  margin-bottom: 0.75rem;
+  will-change: width;
+}
+
+.introProgressText {
+  font-family: 'Nunito', sans-serif;
+  font-size: 1.1rem;
+  opacity: 0.8;
+}

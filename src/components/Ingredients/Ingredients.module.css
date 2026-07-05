@@ -1,0 +1,17 @@
+.ingredient {
+  position: absolute;
+  pointer-events: none;
+  will-change: transform;
+}
+
+.svg {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+@media (max-width: 768px) {
+  .ingredient {
+    display: none;
+  }
+}

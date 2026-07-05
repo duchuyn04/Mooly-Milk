@@ -1,0 +1,300 @@
+.hero {
+  position: relative;
+  width: 100%;
+  min-height: max(680px, 100dvh);
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+  background: #f7e6d3;
+  color: #3f271c;
+}
+
+.hero::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 20;
+  background:
+    radial-gradient(circle at 50% 46%, transparent 0 55%, rgba(63, 39, 28, 0.08) 100%),
+    linear-gradient(to bottom, transparent 78%, rgba(63, 39, 28, 0.14));
+}
+
+.heroInner {
+  position: relative;
+  width: min(1440px, 100%);
+  min-height: 100%;
+  display: grid;
+  place-items: center;
+  padding: 6.5rem 2rem 3rem;
+}
+
+.heroCopy {
+  position: relative;
+  z-index: 8;
+  width: min(820px, 64vw);
+  text-align: center;
+}
+
+.heroBadge {
+  display: none;
+}
+
+.heroTitle {
+  position: relative;
+  z-index: 2;
+  margin: 0;
+  font-family: 'Nunito', sans-serif;
+  font-size: 5.15rem;
+  font-weight: 900;
+  line-height: 1.02;
+  letter-spacing: 0;
+  text-transform: uppercase;
+  color: #3b2116;
+  white-space: normal;
+}
+
+.heroSub {
+  position: relative;
+  z-index: 3;
+  display: inline-block;
+  margin: 0.25rem 0 1.9rem;
+  padding: 0.18em 0.42em 0.12em;
+  background: #a6662d;
+  color: #ffe8c8;
+  font-family: 'Nunito', sans-serif;
+  font-size: 3.95rem;
+  font-weight: 900;
+  line-height: 1.02;
+  letter-spacing: 0;
+  text-transform: uppercase;
+  transform: rotate(-2deg);
+  box-shadow: 0 18px 34px rgba(63, 39, 28, 0.08);
+}
+
+.heroDesc {
+  max-width: 48ch;
+  margin: 0 auto 4.8rem;
+  font-size: 0.98rem;
+  font-weight: 600;
+  line-height: 1.35;
+  color: rgba(63, 39, 28, 0.82);
+}
+
+.heroCta {
+  position: relative;
+  z-index: 10;
+  display: inline-flex;
+}
+
+.heroCta a {
+  min-width: 12rem;
+  justify-content: center;
+  padding: 1rem 2rem;
+  border-radius: 999px;
+  background: #dea052;
+  color: #3b2116;
+  font-family: 'Nunito', sans-serif;
+  font-size: 1rem;
+  font-weight: 900;
+  letter-spacing: 0;
+  text-transform: uppercase;
+  box-shadow: none;
+}
+
+.heroVisual {
+  position: absolute;
+  inset: 0;
+  z-index: 5;
+  pointer-events: none;
+}
+
+.productCluster {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  animation: clusterFloat 6s ease-in-out infinite;
+}
+
+@keyframes clusterFloat {
+  0%, 100% { transform: translateY(0) rotate(0deg); }
+  50% { transform: translateY(-10px) rotate(0.4deg); }
+}
+
+.can {
+  position: absolute;
+  will-change: transform, opacity;
+  filter: drop-shadow(0 28px 28px rgba(63, 39, 28, 0.18));
+}
+
+.can img,
+.objCan img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.canLeft {
+  z-index: 8;
+  width: 24rem;
+  left: 1.5%;
+  top: 18%;
+  transform: rotate(-13deg);
+}
+
+.canRight {
+  z-index: 8;
+  width: 24.5rem;
+  right: 1.5%;
+  top: 18%;
+  transform: rotate(14deg);
+}
+
+.canMain {
+  z-index: 4;
+  width: 22rem;
+  left: 48%;
+  bottom: -13rem;
+  transform: translateX(-50%) rotate(-8deg);
+  filter: blur(2px) drop-shadow(0 28px 28px rgba(63, 39, 28, 0.14));
+  opacity: 0.95;
+}
+
+.floating {
+  position: absolute;
+  pointer-events: none;
+  will-change: transform, opacity;
+  animation: objFloat 7s ease-in-out infinite;
+}
+
+.objCan {
+  z-index: 12;
+  filter: blur(3px) drop-shadow(0 18px 22px rgba(63, 39, 28, 0.12));
+  opacity: 0.86;
+}
+
+.objCan1 {
+  --r: 74deg;
+  width: 16rem;
+  left: 10%;
+  top: -10rem;
+  transform: rotate(74deg);
+}
+
+.objCan2 {
+  --r: 102deg;
+  width: 17rem;
+  right: 24%;
+  top: -9rem;
+  transform: rotate(102deg);
+}
+
+.objCan3 {
+  --r: -38deg;
+  width: 14rem;
+  right: -3rem;
+  bottom: 2rem;
+  transform: rotate(-38deg);
+}
+
+@keyframes objFloat {
+  0%, 100% { transform: translateY(0) rotate(var(--r, 0deg)); }
+  50% { transform: translateY(-14px) rotate(var(--r, 0deg)); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .productCluster,
+  .floating {
+    animation: none;
+  }
+}
+
+@media (max-width: 1100px) {
+  .heroTitle {
+    font-size: 4.15rem;
+  }
+
+  .heroSub {
+    font-size: 3.05rem;
+  }
+
+  .canLeft {
+    width: 19rem;
+    left: -3rem;
+  }
+
+  .canRight {
+    width: 19.5rem;
+    right: -3rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero {
+    min-height: 100dvh;
+  }
+
+  .heroInner {
+    padding: 5.75rem 1rem 2rem;
+  }
+
+  .heroCopy {
+    width: min(24rem, 94vw);
+  }
+
+  .heroTitle {
+    font-size: 3rem;
+    white-space: normal;
+  }
+
+  .heroSub {
+    margin-top: 0.35rem;
+    margin-bottom: 1.3rem;
+    font-size: 2.25rem;
+  }
+
+  .heroDesc {
+    margin-bottom: 2rem;
+    font-size: 0.88rem;
+  }
+
+  .canLeft {
+    width: 13rem;
+    left: -3rem;
+    top: 14%;
+  }
+
+  .canRight {
+    width: 13rem;
+    right: -3.5rem;
+    top: 15%;
+  }
+
+  .canMain {
+    width: 13rem;
+    bottom: -7.5rem;
+  }
+
+  .objCan1,
+  .objCan2,
+  .objCan3 {
+    display: none;
+  }
+}
+
+@media (max-width: 480px) {
+  .heroTitle {
+    font-size: 2.25rem;
+  }
+
+  .heroSub {
+    font-size: 1.7rem;
+  }
+
+  .heroCta a {
+    min-width: 10.5rem;
+    padding: 0.9rem 1.5rem;
+    font-size: 0.92rem;
+  }
+}

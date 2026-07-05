@@ -1,0 +1,58 @@
+.flavorCard {
+  flex: 0 0 auto;
+  width: clamp(280px, 34vw, 400px);
+  aspect-ratio: 3/4.2;
+  border-radius: 2rem;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 24px 60px rgba(92,61,46,0.18);
+  transform-origin: center center;
+  transition: transform 0.25s var(--ease-fluid), box-shadow 0.25s var(--ease-fluid);
+  scroll-snap-align: start;
+  transform-style: preserve-3d;
+}
+
+.flavorCard:hover {
+  box-shadow: 0 32px 70px rgba(92,61,46,0.28);
+}
+
+.flavorCan {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -52%);
+  width: 72%;
+  filter: drop-shadow(0 20px 40px rgba(0,0,0,0.2));
+}
+
+.flavorMeta {
+  position: absolute;
+  bottom: 1.75rem;
+  left: 1.75rem;
+  right: 1.75rem;
+}
+
+.flavorMeta h3 {
+  font-size: clamp(1.75rem, 3vw, 2.5rem);
+  margin-bottom: 0.25rem;
+}
+
+.flavorMeta p {
+  margin: 0;
+  font-weight: 500;
+  opacity: 0.85;
+}
+
+@media (max-width: 768px) {
+  .flavorCard {
+    width: min(82vw, 320px);
+    border-radius: 1.4rem;
+    scroll-snap-align: center;
+  }
+
+  .flavorMeta {
+    bottom: 1.25rem;
+    left: 1.25rem;
+    right: 1.25rem;
+  }
+}

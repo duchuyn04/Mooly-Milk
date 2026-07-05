@@ -1,0 +1,18 @@
+.floatingIngredients {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 2;
+  overflow: hidden;
+}
+
+.item {
+  position: absolute;
+  will-change: transform;
+}
+
+@media (max-width: 768px) {
+  .floatingIngredients {
+    display: none;
+  }
+}

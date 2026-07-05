@@ -1,0 +1,779 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>MooLy bản nháp bố cục</title>
+    <style>
+      :root {
+        --milk: #fff6ec;
+        --cream: #f4dfc9;
+        --paper: #fffaf2;
+        --brown: #3f251b;
+        --brown-soft: #6f4b37;
+        --caramel: #ce8840;
+        --line: rgba(63, 37, 27, 0.16);
+        --muted: rgba(63, 37, 27, 0.68);
+        --shadow: 0 24px 60px rgba(63, 37, 27, 0.12);
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        margin: 0;
+        background: var(--milk);
+        color: var(--brown);
+        font-family: "Be Vietnam Pro", "Nunito", Arial, sans-serif;
+      }
+
+      img {
+        display: block;
+        max-width: 100%;
+      }
+
+      .page {
+        overflow: hidden;
+      }
+
+      .frame {
+        width: min(1180px, calc(100% - 40px));
+        margin: 0 auto;
+      }
+
+      .hero-spacer {
+        min-height: 54vh;
+        display: grid;
+        place-items: center;
+        background:
+          radial-gradient(circle at 20% 20%, rgba(206, 136, 64, 0.18), transparent 28%),
+          radial-gradient(circle at 82% 18%, rgba(168, 198, 108, 0.18), transparent 30%),
+          var(--cream);
+        border-bottom: 1px solid var(--line);
+      }
+
+      .hero-spacer h1 {
+        margin: 0;
+        font-size: clamp(2.8rem, 8vw, 7rem);
+        line-height: 0.92;
+        text-align: center;
+        text-transform: uppercase;
+        letter-spacing: 0;
+      }
+
+      .eyebrow {
+        font-size: 0.8rem;
+        font-weight: 800;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        color: var(--caramel);
+      }
+
+      .section {
+        padding: clamp(72px, 9vw, 128px) 0;
+        border-bottom: 1px solid var(--line);
+      }
+
+      .section-head {
+        display: grid;
+        grid-template-columns: minmax(0, 0.95fr) minmax(280px, 0.55fr);
+        gap: clamp(24px, 5vw, 72px);
+        align-items: end;
+        margin-bottom: clamp(36px, 6vw, 72px);
+      }
+
+      .section h2 {
+        margin: 10px 0 0;
+        font-size: clamp(2.5rem, 6vw, 5.6rem);
+        line-height: 0.98;
+        text-transform: uppercase;
+        letter-spacing: 0;
+      }
+
+      .section-lead {
+        margin: 0;
+        color: var(--muted);
+        font-size: 1.05rem;
+        line-height: 1.65;
+      }
+
+      .proof {
+        padding: 28px 0;
+        background: var(--paper);
+        border-bottom: 1px solid var(--line);
+      }
+
+      .proof-grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 1px;
+        background: var(--line);
+        border: 1px solid var(--line);
+      }
+
+      .proof-item {
+        min-height: 112px;
+        padding: 22px;
+        background: var(--paper);
+      }
+
+      .proof-item strong {
+        display: block;
+        font-size: clamp(1.6rem, 3vw, 2.4rem);
+        line-height: 1;
+      }
+
+      .proof-item span {
+        display: block;
+        margin-top: 10px;
+        color: var(--muted);
+        font-size: 0.94rem;
+      }
+
+      .shelf {
+        background: var(--milk);
+      }
+
+      .product-grid {
+        display: grid;
+        grid-template-columns: 1.15fr 0.85fr;
+        gap: 22px;
+        align-items: stretch;
+      }
+
+      .feature-product,
+      .flavor-list,
+      .story-panel,
+      .moment-card,
+      .quality-panel,
+      .cta-panel {
+        background: var(--paper);
+        border: 1px solid var(--line);
+        border-radius: 18px;
+        box-shadow: var(--shadow);
+      }
+
+      .feature-product {
+        min-height: 620px;
+        padding: clamp(24px, 4vw, 46px);
+        display: grid;
+        grid-template-columns: 0.8fr 1fr;
+        gap: 24px;
+        align-items: center;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .feature-product::before {
+        content: "";
+        position: absolute;
+        inset: auto 8% 8% 8%;
+        height: 28%;
+        background: rgba(206, 136, 64, 0.15);
+        border-radius: 50%;
+        filter: blur(16px);
+      }
+
+      .product-copy {
+        position: relative;
+        z-index: 1;
+      }
+
+      .product-copy h3 {
+        margin: 12px 0;
+        font-size: clamp(2rem, 4vw, 4.3rem);
+        line-height: 0.98;
+        text-transform: uppercase;
+      }
+
+      .product-copy p {
+        color: var(--muted);
+        line-height: 1.65;
+      }
+
+      .product-shot {
+        position: relative;
+        z-index: 1;
+        width: min(320px, 100%);
+        margin: auto;
+        transform: rotate(6deg);
+      }
+
+      .flavor-list {
+        padding: 20px;
+        display: grid;
+        gap: 14px;
+      }
+
+      .flavor-row {
+        display: grid;
+        grid-template-columns: 70px 1fr auto;
+        gap: 16px;
+        align-items: center;
+        padding: 14px;
+        border-radius: 14px;
+        background: rgba(255, 246, 236, 0.78);
+        border: 1px solid var(--line);
+      }
+
+      .flavor-row img {
+        height: 86px;
+        object-fit: contain;
+        margin: auto;
+      }
+
+      .flavor-row b {
+        display: block;
+        font-size: 1.05rem;
+      }
+
+      .flavor-row span {
+        color: var(--muted);
+        font-size: 0.92rem;
+      }
+
+      .pill {
+        padding: 9px 12px;
+        border-radius: 999px;
+        background: var(--cream);
+        font-size: 0.82rem;
+        font-weight: 800;
+      }
+
+      .story {
+        background: var(--brown);
+        color: var(--milk);
+      }
+
+      .story .eyebrow,
+      .story .section-lead {
+        color: rgba(255, 246, 236, 0.72);
+      }
+
+      .story-grid {
+        display: grid;
+        grid-template-columns: 0.8fr 1.2fr;
+        gap: 22px;
+      }
+
+      .story-panel {
+        min-height: 430px;
+        padding: 34px;
+        color: var(--brown);
+      }
+
+      .story-panel.large {
+        background:
+          linear-gradient(135deg, rgba(255, 250, 242, 0.92), rgba(244, 223, 201, 0.9)),
+          var(--paper);
+        display: grid;
+        grid-template-columns: 1fr 0.9fr;
+        align-items: center;
+        gap: 24px;
+      }
+
+      .story-panel h3 {
+        margin: 0 0 12px;
+        font-size: clamp(1.8rem, 3.4vw, 3.8rem);
+        line-height: 1;
+        text-transform: uppercase;
+      }
+
+      .story-panel p,
+      .story-panel li {
+        color: var(--muted);
+        line-height: 1.65;
+      }
+
+      .story-panel ul {
+        padding-left: 1.1rem;
+        margin: 22px 0 0;
+      }
+
+      .stacked-cartons {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+        align-items: end;
+      }
+
+      .stacked-cartons img:nth-child(1) {
+        transform: rotate(-7deg) translateY(14px);
+      }
+
+      .stacked-cartons img:nth-child(2) {
+        transform: rotate(8deg) translateY(-16px);
+      }
+
+      .moments {
+        background: var(--cream);
+      }
+
+      .moment-grid {
+        display: grid;
+        grid-template-columns: 1.1fr 0.9fr 1fr;
+        gap: 18px;
+        align-items: stretch;
+      }
+
+      .moment-card {
+        min-height: 310px;
+        padding: 28px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+      }
+
+      .moment-card:nth-child(2) {
+        margin-top: 64px;
+      }
+
+      .moment-card h3 {
+        margin: 0;
+        font-size: clamp(1.7rem, 3vw, 3rem);
+        line-height: 1;
+        text-transform: uppercase;
+      }
+
+      .moment-card p {
+        color: var(--muted);
+        line-height: 1.62;
+      }
+
+      .wire-image {
+        min-height: 150px;
+        border-radius: 14px;
+        background:
+          linear-gradient(135deg, rgba(63, 37, 27, 0.1), rgba(206, 136, 64, 0.14)),
+          repeating-linear-gradient(45deg, transparent 0 12px, rgba(63, 37, 27, 0.05) 12px 13px);
+        border: 1px dashed rgba(63, 37, 27, 0.22);
+      }
+
+      .quality {
+        background: var(--milk);
+      }
+
+      .quality-grid {
+        display: grid;
+        grid-template-columns: 0.85fr 1.15fr;
+        gap: 22px;
+      }
+
+      .quality-panel {
+        padding: 34px;
+      }
+
+      .quality-panel.dark {
+        background: var(--brown);
+        color: var(--milk);
+      }
+
+      .quality-panel.dark p {
+        color: rgba(255, 246, 236, 0.72);
+      }
+
+      .quality-list {
+        display: grid;
+        gap: 1px;
+        background: var(--line);
+        border: 1px solid var(--line);
+      }
+
+      .quality-item {
+        display: grid;
+        grid-template-columns: 76px 1fr;
+        gap: 20px;
+        padding: 24px;
+        background: var(--paper);
+      }
+
+      .quality-item strong {
+        font-size: 1.35rem;
+      }
+
+      .quality-item p {
+        margin: 6px 0 0;
+        color: var(--muted);
+        line-height: 1.58;
+      }
+
+      .cta {
+        padding: clamp(72px, 9vw, 120px) 0;
+        background: var(--paper);
+      }
+
+      .cta-panel {
+        min-height: 360px;
+        padding: clamp(28px, 6vw, 72px);
+        display: grid;
+        grid-template-columns: 1fr 0.8fr;
+        gap: 28px;
+        align-items: center;
+        overflow: hidden;
+      }
+
+      .cta-panel h2 {
+        margin: 0 0 18px;
+        font-size: clamp(2.6rem, 7vw, 6rem);
+        line-height: 0.94;
+        text-transform: uppercase;
+      }
+
+      .cta-panel p {
+        color: var(--muted);
+        line-height: 1.65;
+        max-width: 44rem;
+      }
+
+      .button-row {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 12px;
+        margin-top: 28px;
+      }
+
+      .button {
+        appearance: none;
+        border: 0;
+        border-radius: 999px;
+        padding: 15px 24px;
+        background: var(--caramel);
+        color: var(--brown);
+        font-weight: 900;
+        text-decoration: none;
+      }
+
+      .button.secondary {
+        background: var(--cream);
+      }
+
+      .cta-products {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .cta-products img {
+        width: min(210px, 32vw);
+        margin-left: -56px;
+      }
+
+      .cta-products img:first-child {
+        margin-left: 0;
+      }
+
+      .site-footer {
+        padding: 42px 0;
+        background: var(--brown);
+        color: var(--milk);
+      }
+
+      .footer-row {
+        display: flex;
+        justify-content: space-between;
+        gap: 24px;
+        align-items: center;
+      }
+
+      .footer-links {
+        display: flex;
+        gap: 18px;
+        flex-wrap: wrap;
+      }
+
+      .footer-links a {
+        color: rgba(255, 246, 236, 0.72);
+        text-decoration: none;
+      }
+
+      @media (max-width: 900px) {
+        .section-head,
+        .product-grid,
+        .feature-product,
+        .story-grid,
+        .story-panel.large,
+        .moment-grid,
+        .quality-grid,
+        .cta-panel {
+          grid-template-columns: 1fr;
+        }
+
+        .proof-grid {
+          grid-template-columns: repeat(2, 1fr);
+        }
+
+        .feature-product {
+          min-height: auto;
+        }
+
+        .story-panel,
+        .moment-card {
+          min-height: auto;
+        }
+
+        .moment-card:nth-child(2) {
+          margin-top: 0;
+        }
+
+        .footer-row {
+          align-items: flex-start;
+          flex-direction: column;
+        }
+      }
+
+      @media (max-width: 560px) {
+        .frame {
+          width: min(100% - 24px, 1180px);
+        }
+
+        .proof-grid,
+        .flavor-row,
+        .quality-item {
+          grid-template-columns: 1fr;
+        }
+
+        .flavor-row {
+          text-align: center;
+        }
+
+        .cta-products img {
+          margin-left: -72px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <main class="page">
+      <section class="hero-spacer" aria-label="Hero hiện tại">
+        <div class="frame">
+          <h1>Hero hiện tại giữ nguyên</h1>
+        </div>
+      </section>
+
+      <section class="proof" aria-label="Dải tin cậy">
+        <div class="frame proof-grid">
+          <div class="proof-item">
+            <strong>6 vị</strong>
+            <span>Dâu tây, sô cô la, vani, matcha, cam và việt quất</span>
+          </div>
+          <div class="proof-item">
+            <strong>200 ml</strong>
+            <span>Một hộp nhỏ gọn cho mỗi lần uống</span>
+          </div>
+          <div class="proof-item">
+            <strong>Ít ngọt</strong>
+            <span>Vị sữa rõ, nhẹ bụng, ngon nhất khi uống lạnh</span>
+          </div>
+          <div class="proof-item">
+            <strong>Dễ chọn</strong>
+            <span>Nhìn màu là biết vị, phù hợp mua nhanh</span>
+          </div>
+        </div>
+      </section>
+
+      <section class="section shelf" aria-labelledby="shelf-title">
+        <div class="frame">
+          <div class="section-head">
+            <div>
+              <span class="eyebrow">Kệ sản phẩm</span>
+              <h2 id="shelf-title">Chọn vị theo tâm trạng</h2>
+            </div>
+            <p class="section-lead">Thay carousel đơn thuần bằng một kệ sản phẩm có món nổi bật, danh sách vị rõ ràng và nhịp đọc nhanh hơn trên desktop lẫn mobile.</p>
+          </div>
+
+          <div class="product-grid">
+            <article class="feature-product">
+              <div class="product-copy">
+                <span class="eyebrow">Vị đang nổi bật</span>
+                <h3>Dâu tây mát lạnh</h3>
+                <p>Mảng lớn dành cho vị chủ lực trong tuần. Khi đổi vị, chỉ cần thay ảnh, màu nền và đoạn mô tả ngắn.</p>
+                <a class="button" href="#cta">Chọn vị này</a>
+              </div>
+              <img class="product-shot" src="../public/assets/pink-milk.png" alt="Hộp sữa MooLy vị dâu tây" />
+            </article>
+
+            <aside class="flavor-list" aria-label="Danh sách vị">
+              <div class="flavor-row">
+                <img src="../public/assets/brown-milk.png" alt="Hộp sữa vị sô cô la" />
+                <div>
+                  <b>Sô cô la</b>
+                  <span>Đậm vị, hợp bữa sáng</span>
+                </div>
+                <span class="pill">Béo nhẹ</span>
+              </div>
+              <div class="flavor-row">
+                <img src="../public/assets/vani-milk.png" alt="Hộp sữa vị vani" />
+                <div>
+                  <b>Vani</b>
+                  <span>Thơm mềm, dễ uống</span>
+                </div>
+                <span class="pill">Êm vị</span>
+              </div>
+              <div class="flavor-row">
+                <img src="../public/assets/green-milk.png" alt="Hộp sữa vị matcha" />
+                <div>
+                  <b>Matcha</b>
+                  <span>Thanh hơn cho buổi chiều</span>
+                </div>
+                <span class="pill">Mới lạ</span>
+              </div>
+              <div class="flavor-row">
+                <img src="../public/assets/blue-milk.png" alt="Hộp sữa vị việt quất" />
+                <div>
+                  <b>Việt quất</b>
+                  <span>Trái cây nhẹ, màu nổi bật</span>
+                </div>
+                <span class="pill">Tươi</span>
+              </div>
+            </aside>
+          </div>
+        </div>
+      </section>
+
+      <section class="section story" aria-labelledby="story-title">
+        <div class="frame">
+          <div class="section-head">
+            <div>
+              <span class="eyebrow">Lý do tin</span>
+              <h2 id="story-title">Không chỉ là hộp sữa dễ thương</h2>
+            </div>
+            <p class="section-lead">Phần benefits nên bớt giống ba card ngang. Dùng một câu chuyện chính và các điểm chứng minh để tạo cảm giác thương hiệu lớn hơn.</p>
+          </div>
+
+          <div class="story-grid">
+            <article class="story-panel">
+              <h3>Vị sữa rõ</h3>
+              <p>Sữa có độ béo nhẹ, ngọt vừa, đủ thơm để trẻ thích và đủ gọn để phụ huynh chọn nhanh.</p>
+              <ul>
+                <li>Uống lạnh ngon hơn</li>
+                <li>Hộp nhỏ dễ mang theo</li>
+                <li>Màu vị nhận diện nhanh</li>
+              </ul>
+            </article>
+            <article class="story-panel large">
+              <div>
+                <h3>Thiết kế để được cầm lên</h3>
+                <p>Khoảng này có thể dùng ảnh thật bàn ăn, balo, kệ tủ lạnh hoặc cảnh uống sữa. Mục tiêu là làm sản phẩm có đời sống, không chỉ đứng trên nền phẳng.</p>
+              </div>
+              <div class="stacked-cartons">
+                <img src="../public/assets/orange-milk.png" alt="Hộp sữa vị cam" />
+                <img src="../public/assets/blue-milk.png" alt="Hộp sữa vị việt quất" />
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section moments" aria-labelledby="moments-title">
+        <div class="frame">
+          <div class="section-head">
+            <div>
+              <span class="eyebrow">Ngữ cảnh dùng</span>
+              <h2 id="moments-title">Uống lúc nào cũng hợp</h2>
+            </div>
+            <p class="section-lead">Thêm một section theo tình huống để trang bán hàng có nhịp đời sống hơn, thay vì chỉ nói thành phần và vị.</p>
+          </div>
+
+          <div class="moment-grid">
+            <article class="moment-card">
+              <div>
+                <span class="eyebrow">Buổi sáng</span>
+                <h3>Bỏ túi trước khi ra cửa</h3>
+              </div>
+              <div class="wire-image" aria-hidden="true"></div>
+              <p>Ảnh gợi ý là hộp sữa cạnh túi, sách hoặc bữa sáng đơn giản.</p>
+            </article>
+            <article class="moment-card">
+              <div>
+                <span class="eyebrow">Giờ nghỉ</span>
+                <h3>Nạp lại nhẹ nhàng</h3>
+              </div>
+              <div class="wire-image" aria-hidden="true"></div>
+              <p>Khối giữa thấp hơn để phá đều hàng, tạo bố cục tự nhiên hơn.</p>
+            </article>
+            <article class="moment-card">
+              <div>
+                <span class="eyebrow">Buổi chiều</span>
+                <h3>Đổi vị cho đỡ chán</h3>
+              </div>
+              <div class="wire-image" aria-hidden="true"></div>
+              <p>Khối này có thể dùng ảnh nhóm nhiều hộp sữa với màu vị khác nhau.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section quality" aria-labelledby="quality-title">
+        <div class="frame">
+          <div class="quality-grid">
+            <article class="quality-panel dark">
+              <span class="eyebrow">Chất lượng</span>
+              <h2 id="quality-title">Rõ ràng ngay trên trang</h2>
+              <p>Đưa thông tin quan trọng vào một vùng chắc chắn hơn để người mua không phải đoán. Đây cũng là nơi có thể đặt icon hoặc minh họa nhỏ.</p>
+            </article>
+            <div class="quality-list">
+              <div class="quality-item">
+                <strong>01</strong>
+                <div>
+                  <strong>Sữa tươi dễ uống</strong>
+                  <p>Diễn giải ngắn về nền sữa, vị béo và độ ngọt.</p>
+                </div>
+              </div>
+              <div class="quality-item">
+                <strong>02</strong>
+                <div>
+                  <strong>Hương vị dễ nhận biết</strong>
+                  <p>Mỗi màu gắn với một vị để người dùng chọn nhanh.</p>
+                </div>
+              </div>
+              <div class="quality-item">
+                <strong>03</strong>
+                <div>
+                  <strong>Đóng gói tiện mang theo</strong>
+                  <p>Nhấn vào kích thước, ống hút và thói quen dùng hằng ngày.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="cta" class="cta" aria-label="Kêu gọi mua hàng">
+        <div class="frame">
+          <div class="cta-panel">
+            <div>
+              <h2>Chọn vị đầu tiên của bạn</h2>
+              <p>CTA cuối trang nên gom lại lựa chọn chính, tránh footer quá mỏng. Có thể dẫn về kệ sản phẩm hoặc form đặt hàng.</p>
+              <div class="button-row">
+                <a class="button" href="#shelf-title">Xem các vị</a>
+                <a class="button secondary" href="#quality-title">Tìm cửa hàng</a>
+              </div>
+            </div>
+            <div class="cta-products" aria-hidden="true">
+              <img src="../public/assets/pink-milk.png" alt="" />
+              <img src="../public/assets/vani-milk.png" alt="" />
+              <img src="../public/assets/green-milk.png" alt="" />
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="frame footer-row">
+        <strong>MooLy</strong>
+        <nav class="footer-links" aria-label="Liên kết cuối trang">
+          <a href="#shelf-title">Vị sữa</a>
+          <a href="#story-title">Lý do chọn</a>
+          <a href="#moments-title">Cách dùng</a>
+          <a href="#quality-title">Chất lượng</a>
+        </nav>
+      </div>
+    </footer>
+  </body>
+</html>
