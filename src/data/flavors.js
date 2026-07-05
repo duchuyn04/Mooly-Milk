@@ -1,3 +1,5 @@
+import { asset } from '../utils/asset';
+
 export const flavors = [
   {
     name: 'MATCHA',
@@ -7,7 +9,7 @@ export const flavors = [
     light: '#A8C66C',
     dark: '#5E7D3A',
     textColor: '#FFF8F0',
-    img: '/assets/green-milk.png',
+    img: asset('assets/green-milk.png'),
     bg: 'linear-gradient(135deg, #A8C66C, #5E7D3A)',
   },
   {
@@ -18,7 +20,7 @@ export const flavors = [
     light: '#F5A76A',
     dark: '#C46A2E',
     textColor: '#FFF8F0',
-    img: '/assets/orange-milk.png',
+    img: asset('assets/orange-milk.png'),
     bg: 'linear-gradient(135deg, #F5A76A, #C46A2E)',
   },
   {
@@ -29,7 +31,7 @@ export const flavors = [
     light: '#7FAED8',
     dark: '#3E5F8A',
     textColor: '#FFF8F0',
-    img: '/assets/blue-milk.png',
+    img: asset('assets/blue-milk.png'),
     bg: 'linear-gradient(135deg, #7FAED8, #3E5F8A)',
   },
   {
@@ -40,7 +42,7 @@ export const flavors = [
     light: '#A06845',
     dark: '#5C3D2E',
     textColor: '#FFF8F0',
-    img: '/assets/brown-milk.png',
+    img: asset('assets/brown-milk.png'),
     bg: 'linear-gradient(135deg, #A06845, #5C3D2E)',
   },
   {
@@ -51,7 +53,7 @@ export const flavors = [
     light: '#F2A0A0',
     dark: '#C75B5B',
     textColor: '#FFF8F0',
-    img: '/assets/pink-milk.png',
+    img: asset('assets/pink-milk.png'),
     bg: 'linear-gradient(135deg, #F2A0A0, #C75B5B)',
   },
   {
@@ -62,7 +64,7 @@ export const flavors = [
     light: '#F8EEC8',
     dark: '#D4B87A',
     textColor: '#5C3D2E',
-    img: '/assets/vani-milk.png',
+    img: asset('assets/vani-milk.png'),
     bg: 'linear-gradient(135deg, #F8EEC8, #D4B87A)',
   },
 ];

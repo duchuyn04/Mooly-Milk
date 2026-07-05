@@ -2,6 +2,7 @@ import { useRef } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { useGSAP } from '@gsap/react';
+import { asset } from '../../utils/asset';
 import styles from './BenefitsSection.module.css';
 
 gsap.registerPlugin(ScrollTrigger);
@@ -11,21 +12,21 @@ const moments = [
     eyebrow: 'Buổi sáng',
     title: 'Bỏ túi\ntrước khi\nra cửa',
     text: 'Hộp nhỏ dễ mang theo cùng bữa sáng, sách vở hoặc túi làm việc.',
-    imgs: ['/assets/vani-milk.png'],
+    imgs: [asset('assets/vani-milk.png')],
     alts: ['Hộp sữa MooLy vị vani'],
   },
   {
     eyebrow: 'Giờ nghỉ',
     title: 'Nạp\nlại nhẹ\nnhàng',
     text: 'Vị sữa mát giúp đoạn nghỉ giữa ngày có cảm giác dễ chịu hơn.',
-    imgs: ['/assets/pink-milk.png', '/assets/orange-milk.png'],
+    imgs: [asset('assets/pink-milk.png'), asset('assets/orange-milk.png')],
     alts: ['Hộp sữa MooLy vị dâu tây', 'Hộp sữa MooLy vị cam'],
   },
   {
     eyebrow: 'Buổi chiều',
     title: 'Đổi vị cho\nđỡ chán',
     text: 'Mỗi màu là một vị riêng, hợp những lúc muốn uống gì đó nhẹ mà vẫn vui.',
-    imgs: ['/assets/green-milk.png'],
+    imgs: [asset('assets/green-milk.png')],
     alts: ['Hộp sữa MooLy vị matcha'],
   },
 ];
@@ -481,8 +482,8 @@ export function BenefitsSection({ prefersReducedMotion, isTouch, isNarrow }) {
                 </p>
               </div>
               <div className={styles.stackedCartons} aria-hidden="true">
-                <img src="/assets/orange-milk.png" alt="Hộp sữa MooLy vị cam" width="1254" height="1254" loading="lazy" />
-                <img src="/assets/blue-milk.png" alt="Hộp sữa MooLy vị việt quất" width="1254" height="1254" loading="lazy" />
+                <img src={asset('assets/orange-milk.png')} alt="Hộp sữa MooLy vị cam" width="1254" height="1254" loading="lazy" />
+                <img src={asset('assets/blue-milk.png')} alt="Hộp sữa MooLy vị việt quất" width="1254" height="1254" loading="lazy" />
               </div>
             </article>
           </div>

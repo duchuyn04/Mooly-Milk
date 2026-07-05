@@ -3,6 +3,7 @@ import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { useGSAP } from '@gsap/react';
 import { flavors } from '../../data/flavors';
+import { asset } from '../../utils/asset';
 import { SplitText } from '../../utils/SplitText';
 import { Button } from '../Button/Button';
 import styles from './HeroSection.module.css';
@@ -255,13 +256,13 @@ export const HeroSection = forwardRef(function HeroSection(
             </div>
 
             <div className={`${styles.floating} ${styles.objCan} ${styles.objCan1}`}>
-              <img className="can-svg" src="/assets/orange-milk.png" alt="" width="1254" height="1254" loading="lazy" />
+              <img className="can-svg" src={asset('assets/orange-milk.png')} alt="" width="1254" height="1254" loading="lazy" />
             </div>
             <div className={`${styles.floating} ${styles.objCan} ${styles.objCan2}`}>
-              <img className="can-svg" src="/assets/green-milk.png" alt="" width="1254" height="1254" loading="lazy" />
+              <img className="can-svg" src={asset('assets/green-milk.png')} alt="" width="1254" height="1254" loading="lazy" />
             </div>
             <div className={`${styles.floating} ${styles.objCan} ${styles.objCan3}`}>
-              <img className="can-svg" src="/assets/blue-milk.png" alt="" width="1254" height="1254" loading="lazy" />
+              <img className="can-svg" src={asset('assets/blue-milk.png')} alt="" width="1254" height="1254" loading="lazy" />
             </div>
           </div>
         </div>

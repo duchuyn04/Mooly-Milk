@@ -3,6 +3,7 @@ import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { useGSAP } from '@gsap/react';
 import { Button } from '../Button/Button';
+import { asset } from '../../utils/asset';
 import styles from './Footer.module.css';
 
 gsap.registerPlugin(ScrollTrigger);
@@ -71,9 +72,9 @@ export function Footer() {
           </div>
 
           <div className={styles.footerProducts} aria-hidden="true">
-            <img className={styles.footerCan} src="/assets/pink-milk.png" alt="" width="1254" height="1254" loading="lazy" />
-            <img className={styles.footerCan} src="/assets/vani-milk.png" alt="" width="1254" height="1254" loading="lazy" />
-            <img className={styles.footerCan} src="/assets/green-milk.png" alt="" width="1254" height="1254" loading="lazy" />
+            <img className={styles.footerCan} src={asset('assets/pink-milk.png')} alt="" width="1254" height="1254" loading="lazy" />
+            <img className={styles.footerCan} src={asset('assets/vani-milk.png')} alt="" width="1254" height="1254" loading="lazy" />
+            <img className={styles.footerCan} src={asset('assets/green-milk.png')} alt="" width="1254" height="1254" loading="lazy" />
           </div>
         </section>
 
