@@ -532,6 +532,32 @@ export function BenefitsSection({ prefersReducedMotion, isTouch, isNarrow }) {
         </div>
       </div>
 
+      <div className={styles.brandSeo} aria-labelledby="mooly-milk-heading">
+        <div className={styles.frame}>
+          <article className={styles.brandSeoPanel}>
+            <span className={styles.eyebrow}>MooLy Milk</span>
+            <h2 id="mooly-milk-heading">MooLy Milk là gì?</h2>
+            <p>
+              MooLy Milk là website giới thiệu sữa tươi nhiều hương vị, dành cho những lúc muốn uống gì đó mát, nhẹ và dễ chọn. Các vị hiện có gồm dâu tây, sô cô la, vani, matcha, cam và việt quất.
+            </p>
+            <p>
+              Trang này là nơi xem nhanh các vị sữa MooLy Milk, hình ảnh sản phẩm và thông tin chính thức của thương hiệu trước khi chia sẻ hoặc tìm lại trên Google.
+            </p>
+          </article>
+
+          <div className={styles.brandFaq} aria-label="Câu hỏi về MooLy Milk">
+            <article>
+              <h3>MooLy Milk có những vị nào?</h3>
+              <p>MooLy Milk có các vị dâu tây, sô cô la, vani, matcha, cam và việt quất.</p>
+            </article>
+            <article>
+              <h3>Website chính thức của MooLy Milk ở đâu?</h3>
+              <p>Website chính thức hiện tại là https://duchuyn04.github.io/Mooly-Milk/.</p>
+            </article>
+          </div>
+        </div>
+      </div>
+
       <div className={styles.quality} ref={qualityRef}>
         <div className={styles.frame}>
           <div className={styles.qualityGrid}>

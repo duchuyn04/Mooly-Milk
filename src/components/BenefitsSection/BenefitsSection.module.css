@@ -270,6 +270,61 @@
   filter: drop-shadow(0 24px 22px rgba(63, 37, 27, 0.24));
 }
 
+.brandSeo {
+  padding: clamp(5rem, 10vw, 8rem) 0;
+  background: #fffaf2;
+}
+
+.brandSeo .frame {
+  display: grid;
+  gap: 1rem;
+}
+
+.brandSeoPanel {
+  max-width: 920px;
+  margin: 0 auto;
+  padding: clamp(1.8rem, 4vw, 3rem);
+  background: #fff6ec;
+  border: 1px solid rgba(63, 37, 27, 0.14);
+  border-radius: 1.15rem;
+  box-shadow: 0 24px 60px rgba(63, 37, 27, 0.08);
+}
+
+.brandSeoPanel h2 {
+  margin: 0.6rem 0 1rem;
+  font-family: 'Nunito', sans-serif;
+  font-size: clamp(2.35rem, 6vw, 4.8rem);
+  font-weight: 900;
+  line-height: 1;
+  text-transform: uppercase;
+  text-wrap: balance;
+}
+
+.brandSeoPanel p,
+.brandFaq p {
+  color: rgba(63, 37, 27, 0.68);
+  line-height: 1.7;
+}
+
+.brandFaq {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.brandFaq article {
+  padding: 1.5rem;
+  background: #fff6ec;
+  border: 1px solid rgba(63, 37, 27, 0.12);
+  border-radius: 1rem;
+}
+
+.brandFaq h3 {
+  margin: 0 0 0.5rem;
+  color: var(--brown);
+  font-size: 1.15rem;
+}
+
 .quality {
   padding: clamp(5rem, 10vw, 8rem) 0;
   background: #fff6ec;
@@ -332,6 +387,7 @@
   .storyGrid,
   .storyPanelLarge,
   .momentGrid,
+  .brandFaq,
   .qualityGrid {
     grid-template-columns: 1fr;
   }
@@ -353,6 +409,7 @@
 
   .story,
   .moments,
+  .brandSeo,
   .quality {
     padding: 4rem 0;
   }
