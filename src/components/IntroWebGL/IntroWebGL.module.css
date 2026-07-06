@@ -1,0 +1,78 @@
+.introOverlay {
+  position: fixed;
+  inset: 0;
+  z-index: 200;
+  background: var(--brown);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: var(--milk);
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.canvasWrap {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background: var(--brown);
+}
+
+.canvasWrap canvas {
+  display: block;
+  width: 100% !important;
+  height: 100% !important;
+}
+
+.introLogo {
+  font-family: 'Nunito', sans-serif;
+  font-size: clamp(4rem, 12vw, 10rem);
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  line-height: 1.1;
+  position: relative;
+  z-index: 3;
+  pointer-events: none;
+}
+
+.introLogo .char {
+  display: inline-block;
+  will-change: transform, opacity;
+}
+
+.logoMask {
+  display: inline-block;
+  will-change: clip-path;
+}
+
+.introProgress {
+  position: absolute;
+  bottom: 10vh;
+  left: 50%;
+  transform: translateX(-50%);
+  width: min(320px, 70%);
+  text-align: center;
+  z-index: 5;
+  pointer-events: none;
+}
+
+.introProgressBar {
+  height: 2px;
+  background: var(--caramel);
+  width: 0%;
+  margin-bottom: 0.75rem;
+  will-change: width;
+}
+
+.introProgressText {
+  font-family: 'Nunito', sans-serif;
+  font-size: 1.1rem;
+  opacity: 0.8;
+}
+
+@media (max-width: 768px) {
+  .introLogo {
+    font-size: clamp(3rem, 14vw, 5rem);
+  }
+}

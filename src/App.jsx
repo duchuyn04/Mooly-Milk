@@ -3,6 +3,7 @@ import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { useMediaQuery } from './hooks/useMediaQuery';
 import { IntroOverlay } from './components/IntroOverlay/IntroOverlay';
+import { IntroWebGL } from './components/IntroWebGL/IntroWebGL';
 import { Nav } from './components/Nav/Nav';
 import { HeroSection } from './components/HeroSection/HeroSection';
 import { FlavorsSection } from './components/FlavorsSection/FlavorsSection';
@@ -16,6 +17,7 @@ gsap.registerPlugin(ScrollTrigger);
 
 function App() {
   const [introDone, setIntroDone] = useState(false);
+  const [webglAvailable, setWebglAvailable] = useState(true);
   const heroRef = useRef(null);
   const prefersReducedMotion = false;
   const isTouch = useMediaQuery('(pointer: coarse)');
@@ -29,6 +31,16 @@ function App() {
     }
     return () => document.body.classList.remove('is-touch');
   }, [isTouch]);
+
+  useEffect(() => {
+    try {
+      const canvas = document.createElement('canvas');
+      const gl = canvas.getContext('webgl') || canvas.getContext('experimental-webgl');
+      setWebglAvailable(!!gl);
+    } catch {
+      setWebglAvailable(false);
+    }
+  }, []);
 
   useEffect(() => {
     // Refresh ScrollTrigger after fonts and images load
@@ -48,10 +60,17 @@ function App() {
   return (
     <SmoothScroll>
       <a href="#main-content" className="skip-link">Bỏ qua nội dung</a>
-      <IntroOverlay
-        prefersReducedMotion={prefersReducedMotion}
-        onComplete={handleIntroComplete}
-      />
+      {webglAvailable ? (
+        <IntroWebGL
+          prefersReducedMotion={prefersReducedMotion}
+          onComplete={handleIntroComplete}
+        />
+      ) : (
+        <IntroOverlay
+          prefersReducedMotion={prefersReducedMotion}
+          onComplete={handleIntroComplete}
+        />
+      )}
       <Nav />
       <main id="main-content">
         <HeroSection
