@@ -5,11 +5,12 @@ import { flavors } from '../../data/flavors';
 import { SplitText } from '../../utils/SplitText';
 import styles from './IntroOverlay.module.css';
 
-const introFlavorIndices = [0, 4, 3]; // matcha, strawberry, chocolate
+const introFlavorIndices = [0, 4, 3, 5];
 const introCanPositions = [
   { top: '18%', left: '12%' },
-  { top: '62%', right: '14%' },
+  { bottom: '18%', left: '15%' },
   { top: '22%', right: '18%' },
+  { bottom: '20%', right: '14%' },
 ];
 
 export function IntroOverlay({ prefersReducedMotion, onComplete }) {
