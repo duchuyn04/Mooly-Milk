@@ -43,9 +43,53 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600&family=Nunito:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <style>
+    .seo-fallback {
+      max-width: 760px;
+      margin: 0 auto;
+      padding: 4rem 1.25rem;
+      font-family: "Be Vietnam Pro", sans-serif;
+      color: #3f271c;
+      background: #fff6ec;
+    }
+
+    .seo-fallback h1 {
+      margin: 0 0 1rem;
+      font-family: "Nunito", sans-serif;
+      font-size: clamp(2.5rem, 8vw, 5rem);
+      line-height: 1;
+      text-transform: uppercase;
+    }
+
+    .seo-fallback p,
+    .seo-fallback li {
+      line-height: 1.7;
+    }
+  </style>
 </head>
 <body>
-  <div id="root"></div>
+  <div id="root">
+    <main class="seo-fallback">
+      <h1>MooLy Milk</h1>
+      <p>
+        MooLy Milk là website chính thức giới thiệu sữa tươi nhiều hương vị như dâu tây, sô cô la, vani, matcha, cam và việt quất.
+      </p>
+      <p>
+        Sữa tươi MooLy Milk có phong cách trẻ trung, hộp nhỏ dễ mang theo, hợp cho bữa sáng, giờ nghỉ và những lúc muốn uống sữa mát lạnh trong ngày.
+      </p>
+      <ul>
+        <li>MooLy Milk vị dâu tây</li>
+        <li>MooLy Milk vị sô cô la</li>
+        <li>MooLy Milk vị vani</li>
+        <li>MooLy Milk vị matcha</li>
+        <li>MooLy Milk vị cam</li>
+        <li>MooLy Milk vị việt quất</li>
+      </ul>
+      <p>
+        Website chính thức của MooLy Milk: <a href="https://duchuyn04.github.io/Mooly-Milk/">https://duchuyn04.github.io/Mooly-Milk/</a>
+      </p>
+    </main>
+  </div>
   <script type="module" src="/src/main.jsx"></script>
 </body>
 </html>
