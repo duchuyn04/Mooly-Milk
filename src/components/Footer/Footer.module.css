@@ -163,13 +163,3 @@
   }
 }
 
-@media (prefers-reduced-motion: reduce) {
-  .footerMarquee span {
-    animation: none;
-  }
-
-  .footerCan {
-    opacity: 1 !important;
-    transform: none !important;
-  }
-}

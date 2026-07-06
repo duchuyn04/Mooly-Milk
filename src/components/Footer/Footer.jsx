@@ -13,9 +13,6 @@ export function Footer() {
 
   useGSAP(
     () => {
-      const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-      if (reduceMotion) return;
-
       const cans = footerRef.current?.querySelectorAll(`.${styles.footerCan}`);
       if (!cans?.length) return;
 

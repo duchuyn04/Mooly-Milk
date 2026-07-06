@@ -1,7 +1,6 @@
 import { useEffect, useRef, useState } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { useReducedMotion } from './hooks/useReducedMotion';
 import { useMediaQuery } from './hooks/useMediaQuery';
 import { IntroOverlay } from './components/IntroOverlay/IntroOverlay';
 import { Nav } from './components/Nav/Nav';
@@ -18,7 +17,7 @@ gsap.registerPlugin(ScrollTrigger);
 function App() {
   const [introDone, setIntroDone] = useState(false);
   const heroRef = useRef(null);
-  const prefersReducedMotion = useReducedMotion();
+  const prefersReducedMotion = false;
   const isTouch = useMediaQuery('(pointer: coarse)');
   const isNarrow = useMediaQuery('(max-width: 768px)');
 

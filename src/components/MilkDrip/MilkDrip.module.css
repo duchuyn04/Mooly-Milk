@@ -23,8 +23,3 @@
   animation: waveMove 12s linear infinite;
 }
 
-@media (prefers-reduced-motion: reduce) {
-  .waveRect {
-    animation: none;
-  }
-}

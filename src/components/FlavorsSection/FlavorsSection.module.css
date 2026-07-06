@@ -284,13 +284,3 @@
   }
 }
 
-@media (prefers-reduced-motion: reduce) {
-  .proofItem,
-  .flavorRow,
-  .productShot,
-  .productShotWrap {
-    opacity: 1 !important;
-    transform: none !important;
-    animation: none !important;
-  }
-}

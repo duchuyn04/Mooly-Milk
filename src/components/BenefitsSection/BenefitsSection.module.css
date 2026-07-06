@@ -424,29 +424,3 @@
   }
 }
 
-@media (prefers-reduced-motion: reduce) {
-  .creamWipe,
-  .storyPanel,
-  .momentCard,
-  .qualityItem,
-  .sectionHead .eyebrow,
-  .sectionHead h2,
-  .sectionHead p,
-  .sectionTitle,
-  .storyPanel h3,
-  .storyPanel p,
-  .storyPanel li,
-  .stackedCartons img,
-  .momentCard .eyebrow,
-  .momentCard h3,
-  .momentTitle,
-  .titleLine,
-  .momentCard p,
-  .momentVisual img,
-  .milkWrap,
-  .milkWrap:hover,
-  .milkWrap:hover img {
-    opacity: 1 !important;
-    transform: none !important;
-  }
-}

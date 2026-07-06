@@ -203,13 +203,6 @@
   50% { transform: translateY(-14px) rotate(var(--r, 0deg)); }
 }
 
-@media (prefers-reduced-motion: reduce) {
-  .productCluster,
-  .floating {
-    animation: none;
-  }
-}
-
 @media (max-width: 1100px) {
   .heroTitle {
     font-size: 4.15rem;
