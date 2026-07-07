@@ -80,6 +80,7 @@ export function Footer() {
           <nav className={styles.footerLinks} aria-label="Liên kết cuối trang">
             <a href="#flavors">Vị sữa</a>
             <a href="#benefits">Lý do chọn</a>
+            <a href="/Mooly-Milk/mooly-milk/">MooLy Milk là gì</a>
             <a href="#footer">Mua hàng</a>
           </nav>
           <small>© 2026 MooLy.</small>
